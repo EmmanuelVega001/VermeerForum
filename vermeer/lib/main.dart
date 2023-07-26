@@ -19,6 +19,7 @@ class NavigationApp extends StatelessWidget{
   return MaterialApp(
    title: "Navegation App",
    theme: ThemeData(
+    fontFamily: "BebasNeue",
     primarySwatch: Colors.deepPurple,
    ),
    initialRoute: '/',
@@ -30,7 +31,7 @@ class NavigationApp extends StatelessWidget{
      '/comentarios':(context) => comentarios(),
     '/perfil':(context) => perfil(),
     '/carga':(context) => carga()
-   },
+   }, 
   );
  }
 }
