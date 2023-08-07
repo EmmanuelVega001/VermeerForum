@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:vermeer/home.dart';
 import 'package:vermeer/login.dart';
 import 'package:vermeer/publicacion.dart';
+import 'package:vermeer/publicacion2.dart';
+import 'package:vermeer/publicacion3.dart';
 import 'package:vermeer/comentarios.dart';
 import 'package:vermeer/carga.dart';
 import 'package:vermeer/perfil.dart';
@@ -26,6 +28,8 @@ class NavigationApp extends StatelessWidget {
         '/home': (context) => home(),
         '/login': (context) => login(),
         '/publicacion': (context) => publicacion(),
+        '/publicacion2': (context) => publicacion2(),
+        '/publicacion3': (context) => publicacion3(),
         '/comentarios': (context) => comentarios(),
         '/perfil': (context) => perfil(nombre: '',)
       },

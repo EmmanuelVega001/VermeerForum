@@ -2,16 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:vermeer/comentarios.dart';
-import 'package:vermeer/publicacion2.dart';
 
-class publicacion extends StatefulWidget {
-  const publicacion({super.key});
+class publicacion3 extends StatefulWidget {
+  const publicacion3({super.key});
 
   @override
-  State<publicacion> createState() => _publicacionState();
+  State<publicacion3> createState() => _publicacion3State();
 }
 
-class _publicacionState extends State<publicacion> {
+class _publicacion3State extends State<publicacion3> {
   
   TextEditingController _searchController = TextEditingController();
   List<String> _originalList = ["La Gioconda", "La noche estrellada", "La última cena"];
@@ -72,11 +71,6 @@ class _publicacionState extends State<publicacion> {
                   child: Text("Vamos a ella"),
                   onPressed: () {
                     Navigator.of(context).pop();
-                  
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => publicacion2()),
-                    );
                   },
                 ),
               ],
@@ -128,7 +122,7 @@ class _publicacionState extends State<publicacion> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(
-              'assets/images/gioconda.jpg', // Replace with the actual image URL
+              'assets/images/noche.jpg', // Replace with the actual image URL
               height: 450,
               width: 450,
             ),
@@ -136,7 +130,7 @@ class _publicacionState extends State<publicacion> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'LA GIOCONDA \n\n Lorem ipsum dolor sit amet consectetur. Lorem nulla purus orci dignissim pulvinar laoreet est. Maecenas natoque faucibus egestas risus. Diam in duis pellentesque interdum. Purus sed vel aliquet euismod gravida. Consectetur amet.', // Replace with the actual description
+                'LA NOCHE ESTRELLADA \n\n Lorem ipsum dolor sit amet consectetur. Lorem nulla purus orci dignissim pulvinar laoreet est. Maecenas natoque faucibus egestas risus. Diam in duis pellentesque interdum. Purus sed vel aliquet euismod gravida. Consectetur amet.', // Replace with the actual description
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
