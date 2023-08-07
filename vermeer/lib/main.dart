@@ -7,31 +7,28 @@ import 'package:vermeer/carga.dart';
 import 'package:vermeer/perfil.dart';
 
 void main(List<String> args) {
- runApp(NavigationApp());
+  runApp(NavigationApp());
 }
 
-class NavigationApp extends StatelessWidget{
-  
- const NavigationApp({super.key});
+class NavigationApp extends StatelessWidget {
+  const NavigationApp({super.key});
 
- @override
- Widget build(BuildContext context){
-  return MaterialApp(
-   title: "Navegation App",
-   theme: ThemeData(
-    fontFamily: "BebasNeue",
-    primarySwatch: Colors.deepPurple,
-   ),
-   initialRoute: '/',
-   routes: {
-    '/':(context)=> login(),
-    '/home':(context) => home(),
-    '/login':(context) => login(),
-    '/publicacion':(context) => publicacion(), 
-     '/comentarios':(context) => comentarios(),
-    '/perfil':(context) => perfil(),
-    '/carga':(context) => carga()
-   }, 
-  );
- }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Navegation App",
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => carga(),
+        '/home': (context) => home(),
+        '/login': (context) => login(),
+        '/publicacion': (context) => publicacion(),
+        '/comentarios': (context) => comentarios(),
+        '/perfil': (context) => perfil(nombre: '',)
+      },
+    );
+  }
 }
