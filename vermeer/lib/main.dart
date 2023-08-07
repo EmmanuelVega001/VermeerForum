@@ -27,7 +27,7 @@ class NavigationApp extends StatelessWidget {
         '/login': (context) => login(),
         '/publicacion': (context) => publicacion(),
         '/comentarios': (context) => comentarios(),
-        '/perfil': (context) => perfil()
+        '/perfil': (context) => perfil(nombre: '',)
       },
     );
   }
