@@ -14,6 +14,9 @@ class _comentarios2State extends State<comentarios2> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
       home: CommentScreen(),
     );
   }
