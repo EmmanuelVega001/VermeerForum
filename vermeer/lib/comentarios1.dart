@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:vermeer/publicacion.dart';
+import 'package:vermeer/publicacion2.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-class comentarios extends StatefulWidget {
-  const comentarios({super.key});
+class comentarios1 extends StatefulWidget {
+  const comentarios1({super.key});
 
   @override
-  State<comentarios> createState() => _comentariosState();
+  State<comentarios1> createState() => _comentarios1State();
 }
 
-class _comentariosState extends State<comentarios> {
+class _comentarios1State extends State<comentarios1> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -73,7 +73,7 @@ class _CommentScreenState extends State<CommentScreen> {
                   _addComment(_commentController.text);
                 }
               },
-              child: Text('Añadir comentario'),
+              child: Text('Comentar'),
             ),
             SizedBox(height: 16),
             Expanded(
@@ -108,7 +108,7 @@ class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => publicacion()),
+              MaterialPageRoute(builder: (context) => publicacion2()),
             );
         },
       ),
