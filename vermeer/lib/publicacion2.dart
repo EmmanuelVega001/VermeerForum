@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields, camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:vermeer/comentarios.dart';
+import 'package:vermeer/publicacion3.dart';
+import 'package:vermeer/publicacion.dart';
 
 class publicacion2 extends StatefulWidget {
   const publicacion2({super.key});
@@ -70,6 +73,19 @@ class _publicacion2State extends State<publicacion2> {
                   child: Text("Vamos a ella"),
                   onPressed: () {
                     Navigator.of(context).pop();
+
+                    if ("${_filteredList[0]}" == "La noche estrellada"){
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => publicacion3()),
+                      );
+                    }
+                    else if ("${_filteredList[0]}" == "La Gioconda"){
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => publicacion()),
+                      );
+                    }
                   },
                 ),
               ],
@@ -129,7 +145,7 @@ class _publicacion2State extends State<publicacion2> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'LA ULTIMA CENA \n\n Lorem ipsum dolor sit amet consectetur. Lorem nulla purus orci dignissim pulvinar laoreet est. Maecenas natoque faucibus egestas risus. Diam in duis pellentesque interdum. Purus sed vel aliquet euismod gravida. Consectetur amet.', // Replace with the actual description
+                'LA ULTIMA CENA \n\n Representa la escena de la última cena de los últimos días de la vida de Jesús de Nazaret según narra el Nuevo Testamento. La pintura está basada en Juan 13:21, en la cual Jesús anuncia que uno de sus doce discípulos le traicionará.',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -140,6 +156,20 @@ class _publicacion2State extends State<publicacion2> {
           ],
         ),
       ),
+      floatingActionButton: Container(
+        width: double.infinity,
+        padding: EdgeInsets.only(top: 16.0),
+        child: ElevatedButton(
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => comentarios()),
+              );
+          },
+          child: Text("Escribenos tu opinion"),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
