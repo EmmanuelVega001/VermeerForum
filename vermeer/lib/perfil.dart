@@ -19,7 +19,7 @@ class perfil extends StatelessWidget {
             CircleAvatar(
               radius: 70,
               backgroundImage: NetworkImage(
-                'https://example.com/imagen_perfil.jpg', // URL de tu imagen de perfil
+                'https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small/profile-icon-design-free-vector.jpg', 
               ),
             ),
             SizedBox(height: 20),
@@ -39,15 +39,15 @@ class perfil extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.email),
-              title: Text(nombre+'@gmail.com'), // Cambia por tu dirección de correo
+              title: Text(nombre+'@gmail.com'), 
             ),
             Divider(),
             ListTile(
               leading: Icon(Icons.location_on),
-              title: Text('La piedad, Michoacan'), // Cambia por tu ubicación
+              title: Text('La piedad, Michoacan'), 
             ),
             Divider(),
-            // Aquí puedes agregar más información adicional si lo deseas
+            
           ],
         ),
       ),

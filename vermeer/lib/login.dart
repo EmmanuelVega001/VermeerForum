@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:vermeer/home.dart';
 import 'package:vermeer/perfil.dart';
 
 class login extends StatefulWidget {
@@ -9,9 +11,16 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  String nombre = '';
+  String nombre = 'pero';
+  String soundPath= 'assets/sound.mp3';
+  AudioPlayer audioPlayer = AudioPlayer();
+  TextEditingController _passwordController = TextEditingController();
+  String _errorMessage = ' ';
+  bool _isPasswordValid = false;
+
   @override
 Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -49,7 +58,7 @@ Widget build(BuildContext context) {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
-
+                controller: _passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -65,7 +74,8 @@ Widget build(BuildContext context) {
                   child: ElevatedButton(
                     child: Text('LogIn'),
                   onPressed: () => {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>perfil(nombre:nombre),))
+                    playSound(),
+                    passwordVal()
                   },
                   style: ElevatedButton.styleFrom(
                     shape: new RoundedRectangleBorder(
@@ -85,10 +95,29 @@ Widget build(BuildContext context) {
             SizedBox(
               height: 130,
             ),
-            Text('New User? Create Account')
+             SizedBox(height: 10),
+            Text(
+              _errorMessage,
+              style: TextStyle(color: Colors.red),
+            ),
+            
           ],
         ),
       ),
     );
   }
+  void passwordVal(){
+    String validPassword = 'arribaValdi123'; // Cambia esto por tu 
+    String enteredPassword = _passwordController.text;
+    if (enteredPassword == validPassword) {
+                          Navigator.pushNamed(context, '/home', arguments: nombre);
+    }
+    _isPasswordValid = enteredPassword == validPassword;
+    setState(() {
+      _errorMessage = _isPasswordValid ? '' : 'Contraseña incorrecta';
+    });  
+  }
+  void playSound(){
+  audioPlayer.play(soundPath);
+}
 }
