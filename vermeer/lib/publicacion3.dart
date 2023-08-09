@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:vermeer/comentarios.dart';
+import 'package:vermeer/comentarios2.dart';
+import 'package:vermeer/home.dart';
 import 'package:vermeer/publicacion.dart';
 import 'package:vermeer/publicacion2.dart';
 
@@ -54,7 +56,10 @@ class _publicacion3State extends State<publicacion3> {
                 TextButton(
                   child: Text("Cerrar"),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => home()),
+                    );
                   },
                 ),
               ],
@@ -72,8 +77,10 @@ class _publicacion3State extends State<publicacion3> {
                 TextButton(
                   child: Text("Vamos a ella"),
                   onPressed: () {
-                    Navigator.of(context).pop();
-
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => home()),
+                    );
                     if ("${_filteredList[0]}" == "La última cena"){
                       Navigator.push(
                       context,
@@ -101,6 +108,15 @@ class _publicacion3State extends State<publicacion3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => home()),
+            );
+        },
+      ),
       title: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -163,7 +179,7 @@ class _publicacion3State extends State<publicacion3> {
           onPressed: (){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => comentarios()),
+              MaterialPageRoute(builder: (context) => comentarios2()),
               );
           },
           child: Text("Escribenos tu opinion"),

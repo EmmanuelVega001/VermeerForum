@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:vermeer/comentarios.dart';
+import 'package:vermeer/home.dart';
 import 'package:vermeer/publicacion2.dart';
 import 'package:vermeer/publicacion3.dart';
 
@@ -54,7 +55,10 @@ class _publicacionState extends State<publicacion> {
                 TextButton(
                   child: Text("Cerrar"),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => home()),
+                    );
                   },
                 ),
               ],
@@ -72,7 +76,10 @@ class _publicacionState extends State<publicacion> {
                 TextButton(
                   child: Text("Vamos a ella"),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => home()),
+                    );
                     if ("${_filteredList[0]}" == "La noche estrellada"){
                       Navigator.push(
                       context,
@@ -100,6 +107,15 @@ class _publicacionState extends State<publicacion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => home()),
+            );
+        },
+      ),
       title: Container(
           decoration: BoxDecoration(
             color: Colors.white,
