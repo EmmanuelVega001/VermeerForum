@@ -114,7 +114,7 @@ class HomeCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8),
+          SizedBox(height: 8),
                 Text(description),
               ],
             ),

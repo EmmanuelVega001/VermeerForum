@@ -37,16 +37,16 @@ class _CommentScreenState extends State<CommentScreen> {
   }
 
   Future<void> _loadComments() async {
-    SharedPreferences prefs1 = await SharedPreferences.getInstance();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      _comments1 = prefs1.getStringList('comments1') ?? [];
+      _comments1 = prefs.getStringList('comments1') ?? [];
     });
   }
 
   Future<void> _addComment(String comment) async {
-    final prefs1 = await SharedPreferences.getInstance();
+    final prefs = await SharedPreferences.getInstance();
     _comments1.add(comment);
-    await prefs1.setStringList('comments1', _comments1);
+    await prefs.setStringList('comments1', _comments1);
     _commentController.clear();
     setState(() {});
   }
