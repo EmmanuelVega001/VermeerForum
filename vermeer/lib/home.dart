@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  String nombre=" ";
+  String nombre="MenelilloVega";
   //final String nombre = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       

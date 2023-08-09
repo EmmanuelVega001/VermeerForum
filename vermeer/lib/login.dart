@@ -11,7 +11,7 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  String nombre = 'pero';
+  String nombre = ' ';
   String soundPath= 'assets/sound.mp3';
   AudioPlayer audioPlayer = AudioPlayer();
   TextEditingController _passwordController = TextEditingController();
@@ -62,7 +62,7 @@ Widget build(BuildContext context) {
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Password',
+                    labelText: 'Password ',
                     hintText: 'Enter secure password'),
               ),
               
@@ -110,7 +110,7 @@ Widget build(BuildContext context) {
     String validPassword = 'arribaValdi123'; // Cambia esto por tu 
     String enteredPassword = _passwordController.text;
     if (enteredPassword == validPassword) {
-                          Navigator.pushNamed(context, '/home', arguments: nombre);
+                          Navigator.pushNamed(context, '/home', arguments: "pedro");
     }
     _isPasswordValid = enteredPassword == validPassword;
     setState(() {
