@@ -19,7 +19,7 @@ class perfil extends StatelessWidget {
             CircleAvatar(
               radius: 70,
               backgroundImage: NetworkImage(
-                'https://example.com/imagen_perfil.jpg', 
+                'https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small/profile-icon-design-free-vector.jpg', 
               ),
             ),
             SizedBox(height: 20),

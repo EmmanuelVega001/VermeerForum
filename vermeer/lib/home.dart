@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vermeer/carga.dart';
+import 'package:vermeer/perfil.dart';
 import 'package:vermeer/publicacion.dart';
 import 'package:vermeer/publicacion2.dart';
 import 'package:vermeer/publicacion3.dart';
@@ -6,15 +8,21 @@ import 'package:vermeer/publicacion3.dart';
 class home extends StatefulWidget {
   const home({super.key});
 
+  
+
   @override
   State<home> createState() => _homeState();
+
 }
 
 class _homeState extends State<home> {
+
   @override
+  
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        
         primarySwatch: Colors.deepPurple,
       ),
       home: HomeScreen(),
@@ -22,23 +30,31 @@ class _homeState extends State<home> {
   }
 }
 
+
+
+
 class HomeScreen extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
-    
+  String nombre=" ";
+  //final String nombre = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       
       appBar: AppBar(
+        title: Text('Home $nombre'),
+        
         leading: IconButton(
-        icon: Icon(Icons.arrow_back),
+        icon: Icon(Icons.man_2_outlined),
         onPressed: () {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => publicacion()),
+              MaterialPageRoute(builder: (context) => perfil(nombre: nombre)),
             );
         },
       ),
-        title: Text('Home'),
+       
       ),
       body: Padding(
         padding: const EdgeInsets.all(50.0),

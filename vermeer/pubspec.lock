@@ -81,7 +81,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
-<<<<<<< HEAD
   file:
     dependency: transitive
     description:
@@ -90,8 +89,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
-=======
->>>>>>> origin/sonido
   flutter:
     dependency: "direct main"
     description: flutter
@@ -115,8 +112,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
-=======
   http:
     dependency: transitive
     description:
@@ -133,7 +128,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
->>>>>>> origin/sonido
   js:
     dependency: transitive
     description:
@@ -182,8 +176,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
-<<<<<<< HEAD
-=======
   path_provider:
     dependency: transitive
     description:
@@ -208,7 +200,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
->>>>>>> origin/sonido
   path_provider_linux:
     dependency: transitive
     description:
@@ -249,7 +240,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.5"
-<<<<<<< HEAD
   shared_preferences:
     dependency: "direct main"
     description:
@@ -306,8 +296,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
-=======
->>>>>>> origin/sonido
   sky_engine:
     dependency: transitive
     description: flutter
