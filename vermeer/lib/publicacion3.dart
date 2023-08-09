@@ -2,6 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:vermeer/comentarios.dart';
+import 'package:vermeer/comentarios2.dart';
+import 'package:vermeer/home.dart';
+import 'package:vermeer/publicacion.dart';
+import 'package:vermeer/publicacion2.dart';
 
 class publicacion3 extends StatefulWidget {
   const publicacion3({super.key});
@@ -52,7 +56,10 @@ class _publicacion3State extends State<publicacion3> {
                 TextButton(
                   child: Text("Cerrar"),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => home()),
+                    );
                   },
                 ),
               ],
@@ -70,7 +77,22 @@ class _publicacion3State extends State<publicacion3> {
                 TextButton(
                   child: Text("Vamos a ella"),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => home()),
+                    );
+                    if ("${_filteredList[0]}" == "La última cena"){
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => publicacion2()),
+                      );
+                    }
+                    else if ("${_filteredList[0]}" == "La Gioconda"){
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => publicacion()),
+                      );
+                    }
                   },
                 ),
               ],
@@ -86,6 +108,15 @@ class _publicacion3State extends State<publicacion3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => home()),
+            );
+        },
+      ),
       title: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -130,7 +161,7 @@ class _publicacion3State extends State<publicacion3> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'LA NOCHE ESTRELLADA \n\n Lorem ipsum dolor sit amet consectetur. Lorem nulla purus orci dignissim pulvinar laoreet est. Maecenas natoque faucibus egestas risus. Diam in duis pellentesque interdum. Purus sed vel aliquet euismod gravida. Consectetur amet.', // Replace with the actual description
+                'LA NOCHE ESTRELLADA \n\n La noche estrellada es un cuadro pintado en el año 1889 por el artista neerlandés Vincent van Gogh (1853-1890). Es considerado uno de los cuadros más importantes del pintor por su estilo único y original, el cual marcó un punto de inflexión en el arte postimpresionista.',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -148,7 +179,7 @@ class _publicacion3State extends State<publicacion3> {
           onPressed: (){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => comentarios()),
+              MaterialPageRoute(builder: (context) => comentarios2()),
               );
           },
           child: Text("Escribenos tu opinion"),

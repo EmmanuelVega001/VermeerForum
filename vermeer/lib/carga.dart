@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vermeer/home.dart';
 import 'package:vermeer/login.dart';
 import 'package:vermeer/publicacion.dart';
 
@@ -8,7 +9,11 @@ class carga extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(Duration(seconds: 5), (){
+<<<<<<< HEAD
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => login()),
+=======
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => home()),
+>>>>>>> de6b7e3b44a9bf136ae1922c479c2e681338c509
       );
     });
 

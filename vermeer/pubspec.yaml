@@ -30,7 +30,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+<<<<<<< HEAD
   audioplayers: ^0.20.1
+=======
+  shared_preferences: ^2.0.10
+
+>>>>>>> de6b7e3b44a9bf136ae1922c479c2e681338c509
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:vermeer/publicacion.dart';
+import 'package:vermeer/publicacion3.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-class comentarios extends StatefulWidget {
-  const comentarios({super.key});
+class comentarios2 extends StatefulWidget {
+  const comentarios2({super.key});
 
   @override
-  State<comentarios> createState() => _comentariosState();
+  State<comentarios2> createState() => _comentarios2State();
 }
 
-class _comentariosState extends State<comentarios> {
+class _comentarios2State extends State<comentarios2> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,26 +27,26 @@ class CommentScreen extends StatefulWidget {
 
 class _CommentScreenState extends State<CommentScreen> {
   final TextEditingController _commentController = TextEditingController();
-  List<String> _comments = [];
+  List<String> _comments2 = [];
 
   @override
   void initState() {
     super.initState();
-    _comments.add("Primer comentario jeje");
+    _comments2.add("Primer comentario jeje");
     _loadComments();
   }
 
   Future<void> _loadComments() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    SharedPreferences prefs2 = await SharedPreferences.getInstance();
     setState(() {
-      _comments = prefs.getStringList('comments') ?? [];
+      _comments2 = prefs2.getStringList('comments2') ?? [];
     });
   }
 
   Future<void> _addComment(String comment) async {
-    final prefs = await SharedPreferences.getInstance();
-    _comments.add(comment);
-    await prefs.setStringList('comments', _comments);
+    final prefs2 = await SharedPreferences.getInstance();
+    _comments2.add(comment);
+    await prefs2.setStringList('comments2', _comments2);
     _commentController.clear();
     setState(() {});
   }
@@ -73,15 +73,15 @@ class _CommentScreenState extends State<CommentScreen> {
                   _addComment(_commentController.text);
                 }
               },
-              child: Text('Añadir comentario'),
+              child: Text('Comentar'),
             ),
             SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
-                itemCount: _comments.length,
+                itemCount: _comments2.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Text(_comments[index]),
+                    title: Text(_comments2[index]),
                   );
                 },
               ),
@@ -108,7 +108,7 @@ class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => publicacion()),
+              MaterialPageRoute(builder: (context) => publicacion3()),
             );
         },
       ),

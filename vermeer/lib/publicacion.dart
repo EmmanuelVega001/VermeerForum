@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:vermeer/comentarios.dart';
+import 'package:vermeer/home.dart';
 import 'package:vermeer/publicacion2.dart';
+import 'package:vermeer/publicacion3.dart';
 
 class publicacion extends StatefulWidget {
   const publicacion({super.key});
@@ -53,7 +55,10 @@ class _publicacionState extends State<publicacion> {
                 TextButton(
                   child: Text("Cerrar"),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => home()),
+                    );
                   },
                 ),
               ],
@@ -71,12 +76,22 @@ class _publicacionState extends State<publicacion> {
                 TextButton(
                   child: Text("Vamos a ella"),
                   onPressed: () {
-                    Navigator.of(context).pop();
-                  
                     Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => home()),
+                    );
+                    if ("${_filteredList[0]}" == "La noche estrellada"){
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => publicacion3()),
+                      );
+                    }
+                    else if ("${_filteredList[0]}" == "La última cena"){
+                      Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => publicacion2()),
-                    );
+                      );
+                    }
                   },
                 ),
               ],
@@ -92,6 +107,15 @@ class _publicacionState extends State<publicacion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => home()),
+            );
+        },
+      ),
       title: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -136,7 +160,7 @@ class _publicacionState extends State<publicacion> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'LA GIOCONDA \n\n Lorem ipsum dolor sit amet consectetur. Lorem nulla purus orci dignissim pulvinar laoreet est. Maecenas natoque faucibus egestas risus. Diam in duis pellentesque interdum. Purus sed vel aliquet euismod gravida. Consectetur amet.', // Replace with the actual description
+                'LA GIOCONDA \n\n La Gioconda o Mona Lisa es uno de los retratos más emblemáticos de la historia de la pintura. Pintado por Leonardo Da Vinci en el siglo XVI, entró a las colecciones de la corte de Francia para finalmente formar parte de las obras de Arte exhibidas en el Museo del Louvre.',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
