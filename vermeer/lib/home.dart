@@ -6,23 +6,17 @@ import 'package:vermeer/publicacion2.dart';
 import 'package:vermeer/publicacion3.dart';
 
 class home extends StatefulWidget {
-  const home({super.key});
-
-  
+  const home({Key? key});
 
   @override
   State<home> createState() => _homeState();
-
 }
 
 class _homeState extends State<home> {
-
   @override
-  
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        
         primarySwatch: Colors.deepPurple,
       ),
       home: HomeScreen(),
@@ -30,35 +24,31 @@ class _homeState extends State<home> {
   }
 }
 
-
-
-
 class HomeScreen extends StatelessWidget {
-
+  String nombre = " ";
 
   @override
   Widget build(BuildContext context) {
   String nombre="MenelilloVega";
   //final String nombre = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
-      
       appBar: AppBar(
         title: Text('Home $nombre'),
-        
         leading: IconButton(
-        icon: Icon(Icons.man_2_outlined),
-        onPressed: () {
-          Navigator.push(
+          icon: Icon(Icons.man_2_outlined),
+          onPressed: () {
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => perfil(nombre: nombre)),
             );
-        },
-      ),
-       
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(50.0),
-        child: CardList(),
+        child: SingleChildScrollView(
+          child: CardList(),
+        ),
       ),
     );
   }
@@ -73,7 +63,6 @@ class CardList extends StatelessWidget {
         HomeCard(
           title: 'La Gioconda',
           image: 'images/gioconda.jpg',
-
           description: 'Monita de Da Vinci',
           onPressed: () {
             Navigator.push(
@@ -128,10 +117,17 @@ class HomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16), //radio de los bordes
+        side: BorderSide(color: Colors.grey, width: 1), //borde
+      ),
       child: Column(
         children: [
-          Image.asset(image,
-          width: 130.0,),
+          Padding(padding: const EdgeInsets.all(16.0),
+            child: Image.asset(image,
+              width: 130.0,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -140,22 +136,26 @@ class HomeCard extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: 20), //espacio entre el título y la descripción
                 Text(description),
               ],
             ),
           ),
           ElevatedButton(
-            onPressed: onPressed,
-            child: Text('Me interesa...'),
+            onPressed: (){
+              onPressed();
+            },
+            child: Text("Me interesa"),
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.all(25), //padding del botón
+            ),
           ),
         ],
       ),
     );
   }
 }
-

@@ -115,7 +115,7 @@ class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
             );
         },
       ),
-      title: Text("Comentarios"),
+      title: Text("Comentarios para La Gioconda"),
       centerTitle: true,
     );
   }
